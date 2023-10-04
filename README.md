@@ -1,2 +1,61 @@
-# jmanzur-dev-container
-A Dev Container form JManzur
+# JManzur Dev Container
+
+Sometimes I need a clean/fresh environment to test stuff.  To address this need, I've crafted a container replete with the tools I commonly use. This container seamlessly integrates with the VS Code Dev Container feature. It is built upon the foundation of the [latest Ubuntu image](https://hub.docker.com/_/ubuntu) and comes equipped with an array of essential tools, including:
+
+- openssl
+- git
+- wget
+- gnupg
+- software-properties-common
+- curl
+- vim
+- unzip
+- htop
+- tree
+- jq
+- Terraform
+- AWS CLI
+- Oh My Bash
+
+Yeah... is a chubby boy 🐽.
+
+## How to use it:
+
+You can pull the image from [Docker Hub](https://hub.docker.com/r/jmanzur/jmanzur-dev-container) or clone this repo and build it locally.
+
+```bash
+git clone https://github.com/JManzur/jmanzur-dev-container.git
+cd jmanzur-dev-container
+docker build -t jmanzur-dev-container .
+```
+
+You can also use the rebuilder script to build the image locally:
+
+```bash
+git clone
+cd jmanzur-dev-container
+chmod +x rebuild_image.sh
+./rebuild_image.sh
+```
+
+Tu run the container execute the following command:
+
+```bash
+sudo docker run --name jmanzur-dev-container -ti jmanzur/dev-container /bin/bash
+```
+
+> ⚠️ **NOTE:** Using the --rm flag will automatically remove the container when it exits. If you want to keep the container around to inspect it later, you can remove the --rm flag and use `docker rm jmanzur-dev-container` to remove it when you’re done.
+
+## How to use it with VS Code:
+
+1. Install the [Remote - Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) extension in VS Code.
+2. Click the "Open a Remote Window" button in the lower left corner of VS Code and select "Attach to Running Container..."
+3. From the pick list, select the jmazur-dev-container container.
+
+![VSCode](images/dev-container-vs-code.png)
+
+> **NOTE:** The jmazur-dev-container container must be running before you can attach to it.
+
+## Author:
+
+- [@JManzur](https://jmanzur.com)
