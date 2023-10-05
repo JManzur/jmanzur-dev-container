@@ -13,20 +13,29 @@ Sometimes I need a clean/fresh environment to test stuff.  To address this need,
 - htop
 - tree
 - jq
+- telnet
 - Terraform
 - AWS CLI
 - Oh My Bash
 
-Yeah... is a chubby boy 🐽.
+Yep... is a chubby boy 🐽, but it includes all the tools I need to get the job done. 😎
 
 ## How to use it:
 
-You can pull the image from [Docker Hub](https://hub.docker.com/r/jmanzur/jmanzur-dev-container) or clone this repo and build it locally.
+You can pull the image from [Docker Hub](https://hub.docker.com/r/jmanzur/jmanzur-dev-container), or clone this repo and build it locally.
 
+To pull and run the image from Docker Hub:
+
+```bash
+docker run --name jmanzur-dev-container -ti jmanzur/dev-container:latest /bin/bash 
+```
+
+To build the image locally and run it:
 ```bash
 git clone https://github.com/JManzur/jmanzur-dev-container.git
 cd jmanzur-dev-container
 docker build -t jmanzur-dev-container .
+docker run --name jmanzur-dev-container -ti jmanzur/dev-container /bin/bash
 ```
 
 You can also use the rebuilder script to build the image locally:
@@ -36,12 +45,7 @@ git clone
 cd jmanzur-dev-container
 chmod +x rebuild_image.sh
 ./rebuild_image.sh
-```
-
-Tu run the container execute the following command:
-
-```bash
-sudo docker run --name jmanzur-dev-container -ti jmanzur/dev-container /bin/bash
+docker run --name jmanzur-dev-container -ti jmanzur/dev-container /bin/bash
 ```
 
 > ⚠️ **NOTE:** Using the --rm flag will automatically remove the container when it exits. If you want to keep the container around to inspect it later, you can remove the --rm flag and use `docker rm jmanzur-dev-container` to remove it when you’re done.
