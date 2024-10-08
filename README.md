@@ -16,6 +16,7 @@ Sometimes I need a clean/fresh environment to test stuff.  To address this need,
 - telnet
 - Terraform
 - AWS CLI
+- Redis CLI
 - Oh My Bash
 
 Yep... is a chubby boy 🐽, but it includes all the tools I need to get the job done. 😎
@@ -24,10 +25,10 @@ Yep... is a chubby boy 🐽, but it includes all the tools I need to get the job
 
 You can pull the image from [Docker Hub](https://hub.docker.com/r/jmanzur/jmanzur-dev-container), or clone this repo and build it locally.
 
-To pull and run the image from Docker Hub:
+To pull and run the image from Docker Hub on your local machine:
 
 ```bash
-docker run --name jmanzur-dev-container -ti jmanzur/dev-container:latest /bin/bash 
+docker run --name --rm jmanzur-dev-container -ti jmanzur/dev-container:latest /bin/bash 
 ```
 
 To build the image locally and run it:
@@ -49,6 +50,14 @@ docker run --name jmanzur-dev-container -ti jmanzur/dev-container /bin/bash
 ```
 
 > ⚠️ **NOTE:** Using the --rm flag will automatically remove the container when it exits. If you want to keep the container around to inspect it later, you can remove the --rm flag and use `docker rm jmanzur-dev-container` to remove it when you’re done.
+
+## How to use it in a Kubernetes cluster:
+
+To pull and run the image from Docker Hub on an Kubernetes cluster:
+
+```bash
+kubectl run jmanzur-dev-container --image=jmanzur/dev-container:latest --restart=Never --rm -ti -- /bin/bash
+```
 
 ## How to use it with VS Code:
 
