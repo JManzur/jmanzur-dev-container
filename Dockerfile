@@ -5,7 +5,7 @@ LABEL maintainer="@JManzur - https://jmanzur.com"
 RUN apt-get update
 
 # Install basic tools:
-RUN apt-get install -y openssl git wget gnupg software-properties-common curl vim unzip htop tree jq telnet redis-tools
+RUN apt-get install -y openssl git wget gnupg software-properties-common curl vim unzip htop tree jq telnet redis-tools dnsutils
 
 # Install Terraform:
 RUN wget -O- https://apt.releases.hashicorp.com/gpg | gpg --dearmor | tee /usr/share/keyrings/hashicorp-archive-keyring.gpg

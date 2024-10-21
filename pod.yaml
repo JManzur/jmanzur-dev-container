@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: jmanzur-dev
+spec:
+  containers:
+  - name: jmanzur-dev
+    image: 971422693749.dkr.ecr.us-east-1.amazonaws.com/jmanzur:latest
+    command: ["/bin/bash", "-c"]
+    args: ["sleep 3600"]
