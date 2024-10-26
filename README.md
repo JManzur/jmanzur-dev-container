@@ -62,6 +62,14 @@ To pull and run the image from Docker Hub on an Kubernetes cluster:
 kubectl run jmanzur-dev-container --image=jmanzur/dev-container:latest --restart=Never --rm -ti -- /bin/bash
 ```
 
+## Mounting a volume:
+
+You can mount a volume to the container to access files on your local machine. For example, to mount the current directory to the /workspace directory in the container:
+
+```bash
+docker run --rm --name jmanzur-dev-container -ti -v $(pwd):/workspace jmanzur/dev-container:latest /bin/bash
+```
+
 ## How to use it with VS Code:
 
 1. Install the [Remote - Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) extension in VS Code.
