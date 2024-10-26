@@ -17,6 +17,7 @@ Sometimes I need a clean/fresh environment to test stuff.  To address this need,
 - Terraform
 - AWS CLI
 - Oh My Bash
+- Redis CLI
 - Kubectl
 - Helm
 
