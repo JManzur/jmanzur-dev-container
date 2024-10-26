@@ -14,6 +14,7 @@ Sometimes I need a clean/fresh environment to test stuff.  To address this need,
 - tree
 - jq
 - telnet
+- ping
 - Terraform
 - AWS CLI
 - Oh My Bash
