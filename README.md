@@ -16,19 +16,20 @@ Sometimes I need a clean/fresh environment to test stuff.  To address this need,
 - telnet
 - Terraform
 - AWS CLI
-- Redis CLI
 - Oh My Bash
+- Kubectl
+- Helm
 
 Yep... is a chubby boy 🐽, but it includes all the tools I need to get the job done. 😎
 
 ## How to use it:
 
-You can pull the image from [Docker Hub](https://hub.docker.com/r/jmanzur/jmanzur-dev-container), or clone this repo and build it locally.
+You can pull the image from [Docker Hub](https://hub.docker.com/r/jmanzur/dev-container), or clone this repo and build it locally.
 
 To pull and run the image from Docker Hub on your local machine:
 
 ```bash
-docker run --name --rm jmanzur-dev-container -ti jmanzur/dev-container:latest /bin/bash 
+docker run --rm --name jmanzur-dev-container -ti jmanzur/dev-container:latest /bin/bash
 ```
 
 To build the image locally and run it:
