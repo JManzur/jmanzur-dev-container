@@ -22,7 +22,6 @@ RUN chmod +x ./kubectl
 RUN mv ./kubectl /usr/local/bin
 RUN echo "source <(kubectl completion bash)" >> ~/.bashrc
 RUN echo "alias k=kubectl" >> ~/.bashrc
-RUN source ~/.bashrc
 
 # Install Helm:
 RUN curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
