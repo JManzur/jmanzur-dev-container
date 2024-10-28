@@ -39,9 +39,6 @@ RUN tar -C /usr/local -xzf /usr/local/go1.23.2.linux-amd64.tar.gz
 RUN rm /usr/local/go1.23.2.linux-amd64.tar.gz
 RUN echo "export PATH=$PATH:/usr/local/go/bin" >> ~/.bashrc
 
-# Install eks-node-viewer
-RUN go install github.com/awslabs/eks-node-viewer/cmd/eks-node-viewer@latest
-
 # Create a Working Directory:
 RUN mkdir /workspace
 WORKDIR /workspace
