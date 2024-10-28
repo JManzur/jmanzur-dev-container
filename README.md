@@ -21,6 +21,8 @@ Sometimes I need a clean/fresh environment to test stuff.  To address this need,
 - Redis CLI
 - Kubectl
 - Helm
+- Go
+- [eks-node-viewer](https://github.com/awslabs/eks-node-viewer)
 
 Yep... is a chubby boy 🐽, but it includes all the tools I need to get the job done. 😎
 

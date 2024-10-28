@@ -33,6 +33,16 @@ RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2
 RUN unzip awscliv2.zip
 RUN bash ./aws/install
 
+# Install go
+RUN GO_TAR="go1.23.0.linux-amd64.tar.gz"
+RUN wget -qcO /usr/local/$GO_TAR https://go.dev/dl/$GO_TAR
+RUN tar -C /usr/local -xzf /usr/local/$GO_TAR
+RUN rm /usr/local/$GO_TAR
+RUN echo "export PATH=$PATH:/usr/local/go/bin" >> ~/.bashrc
+
+# Install eks-node-viewer
+RUN go install github.com/awslabs/eks-node-viewer/cmd/eks-node-viewer@latest
+
 # Create a Working Directory:
 RUN mkdir /workspace
 WORKDIR /workspace
