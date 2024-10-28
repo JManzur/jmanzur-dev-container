@@ -34,7 +34,7 @@ RUN unzip awscliv2.zip
 RUN bash ./aws/install
 
 # Install go
-RUN GO_TAR="go1.23.0.linux-amd64.tar.gz"
+RUN export GO_TAR="go1.23.2.linux-amd64.tar.gz"
 RUN wget -qcO /usr/local/$GO_TAR https://go.dev/dl/$GO_TAR
 RUN tar -C /usr/local -xzf /usr/local/$GO_TAR
 RUN rm /usr/local/$GO_TAR
