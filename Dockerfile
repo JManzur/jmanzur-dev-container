@@ -34,10 +34,9 @@ RUN unzip awscliv2.zip
 RUN bash ./aws/install
 
 # Install go
-RUN export GO_TAR="go1.23.2.linux-amd64.tar.gz"
-RUN wget -qcO /usr/local/$GO_TAR https://go.dev/dl/$GO_TAR
-RUN tar -C /usr/local -xzf /usr/local/$GO_TAR
-RUN rm /usr/local/$GO_TAR
+RUN wget -qcO /usr/local/go1.23.2.linux-amd64.tar.gz https://go.dev/dl/go1.23.2.linux-amd64.tar.gz
+RUN tar -C /usr/local -xzf /usr/local/go1.23.2.linux-amd64.tar.gz
+RUN rm /usr/local/go1.23.2.linux-amd64.tar.gz
 RUN echo "export PATH=$PATH:/usr/local/go/bin" >> ~/.bashrc
 
 # Install eks-node-viewer
