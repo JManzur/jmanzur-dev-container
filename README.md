@@ -64,6 +64,27 @@ To pull and run the image from Docker Hub on an Kubernetes cluster:
 kubectl run jmanzur-dev-container --image=jmanzur/dev-container:latest --restart=Never --rm -ti -- /bin/bash
 ```
 
+If you want to run the container in a specific namespace, you can add the `-n` flag:
+
+```bash
+kubectl run jmanzur-dev-container -n <namespace> --image=jmanzur/dev-container:latest --restart=Never --rm -ti -- /bin/bash
+```
+
+If you need to add a pod label, you can use the `--overrides` flag:
+
+```bash
+kubectl run jmanzur-dev-container -n <namespace> --image=jmanzur/dev-container:latest --restart=Never --rm -ti --overrides='
+{
+  "apiVersion": "v1",
+  "metadata": {
+    "annotations": {
+      "sidecar.istio.io/inject": "false"
+    }
+  }
+}' \
+  -- /bin/bash
+```
+
 ## Mounting a volume:
 
 You can mount a volume to the container to access files on your local machine. For example, to mount the current directory to the /workspace directory in the container:

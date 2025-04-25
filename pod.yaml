@@ -5,6 +5,6 @@ metadata:
 spec:
   containers:
   - name: jmanzur-dev
-    image: 971422693749.dkr.ecr.us-east-1.amazonaws.com/jmanzur:latest
+    image: jmanzur/dev-container:latest
     command: ["/bin/bash", "-c"]
-    args: ["sleep 3600"]
+    args: ["sleep 43200"]
