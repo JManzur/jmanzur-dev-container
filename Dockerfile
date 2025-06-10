@@ -5,7 +5,26 @@ LABEL maintainer="@JManzur - https://jmanzur.com"
 RUN apt-get update
 
 # Install basic tools:
-RUN apt-get install -y \openssl git wget gnupg software-properties-common curl vim unzip htop tree jq telnet redis-tools dnsutils apt-transport-https ca-certificates iputils-ping postgresql-client
+RUN apt-get install -y \
+    openssl \
+    git \
+    wget \
+    gnupg \
+    software-properties-common \
+    curl \
+    vim \
+    unzip \
+    htop \
+    tree \
+    jq \
+    telnet \
+    redis-tools \
+    dnsutils \
+    apt-transport-https \
+    ca-certificates \
+    iputils-ping \
+    postgresql-client \
+    python3-boto3
 
 # Install Oh-My-Bash:
 RUN bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
