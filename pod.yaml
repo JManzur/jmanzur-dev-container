@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   name: jmanzur-dev
 spec:
+  #serviceAccountName: jmanzur-sa # If you need a specific service account
   containers:
   - name: jmanzur-dev
     image: jmanzur/dev-container:latest

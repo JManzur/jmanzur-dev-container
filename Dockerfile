@@ -24,6 +24,7 @@ RUN apt-get install -y \
     ca-certificates \
     iputils-ping \
     postgresql-client \
+    uuid-runtime \
     python3-boto3
 
 # Install Oh-My-Bash:

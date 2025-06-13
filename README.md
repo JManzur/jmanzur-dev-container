@@ -1,6 +1,6 @@
 # JManzur Dev Container
 
-Sometimes I need a clean/fresh environment to test stuff.  To address this need, I've crafted a container replete with the tools I commonly use. This container seamlessly integrates with the VS Code Dev Container feature. It is built upon the foundation of the [latest Ubuntu image](https://hub.docker.com/_/ubuntu) and comes equipped with an array of essential tools, including:
+Sometimes I need a clean/fresh environment to test or troubleshoot stuff. To address this need, I've crafted a container replete with the tools I commonly use. This container seamlessly integrates with the VS Code Dev Container feature. It is built upon the foundation of the [latest Ubuntu image](https://hub.docker.com/_/ubuntu) and comes equipped with an array of essential tools, including:
 
 - openssl
 - git
@@ -17,12 +17,14 @@ Sometimes I need a clean/fresh environment to test stuff.  To address this need,
 - ping
 - Terraform
 - AWS CLI
+- Boto3
 - Oh My Bash
 - Redis CLI
 - Kubectl
 - Helm
 - Go
 - [eks-node-viewer](https://github.com/awslabs/eks-node-viewer)
+- And much more! This is a ever-growing list. For a up-to-date list of installed packages, please refer to the [Dockerfile](Dockerfile).
 
 Yep... is a chubby boy 🐽, but it includes all the tools I need to get the job done. 😎
 
@@ -54,7 +56,8 @@ chmod +x rebuild_image.sh
 docker run --name jmanzur-dev-container -ti jmanzur/dev-container /bin/bash
 ```
 
-> ⚠️ **NOTE:** Using the --rm flag will automatically remove the container when it exits. If you want to keep the container around to inspect it later, you can remove the --rm flag and use `docker rm jmanzur-dev-container` to remove it when you’re done.
+> [!WARNING]
+> Using the --rm flag will automatically remove the container when it exits. If you want to keep the container around to inspect it later, you can remove the --rm flag and use `docker rm jmanzur-dev-container` to remove it when you’re done.
 
 ## How to use it in a Kubernetes cluster:
 
@@ -87,7 +90,7 @@ kubectl run jmanzur-dev-container -n <namespace> --image=jmanzur/dev-container:l
 
 ## Mounting a volume:
 
-You can mount a volume to the container to access files on your local machine. For example, to mount the current directory to the /workspace directory in the container:
+You can mount a volume to the container to access files on your local machine. For example, to mount the current directory to the `/workspace` directory in the container:
 
 ```bash
 docker run --rm --name jmanzur-dev-container -ti -v $(pwd):/workspace jmanzur/dev-container:latest /bin/bash
@@ -101,7 +104,8 @@ docker run --rm --name jmanzur-dev-container -ti -v $(pwd):/workspace jmanzur/de
 
 ![VSCode](images/dev-container-vs-code.png)
 
-> **NOTE:** The jmazur-dev-container container must be running before you can attach to it.
+> [!NOTE]
+> The jmazur-dev-container container must be running before you can attach to it.
 
 ## Author:
 
