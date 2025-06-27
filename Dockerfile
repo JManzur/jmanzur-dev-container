@@ -25,7 +25,8 @@ RUN apt-get install -y \
     iputils-ping \
     postgresql-client \
     uuid-runtime \
-    python3-boto3
+    python3-boto3 \
+    python3-kubernetes
 
 # Install Oh-My-Bash:
 RUN bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
