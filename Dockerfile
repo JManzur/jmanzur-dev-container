@@ -26,7 +26,8 @@ RUN apt-get install -y \
     postgresql-client \
     uuid-runtime \
     python3-boto3 \
-    python3-kubernetes
+    python3-kubernetes \
+    python3-pip
 
 # Install Oh-My-Bash:
 RUN bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
